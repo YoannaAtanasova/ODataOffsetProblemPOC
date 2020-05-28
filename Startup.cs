@@ -55,7 +55,7 @@ namespace ODataOffsetProblemPOC
 
             builder
                .EntitySet<WeatherForecast>("WeatherForecast")
-               .EntityType.HasKey(k => new { k.DateCEST });
+               .EntityType.HasKey(k => new { k.StartDate });
 
             return builder.GetEdmModel();
         }

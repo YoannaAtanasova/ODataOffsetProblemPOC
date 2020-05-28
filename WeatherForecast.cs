@@ -4,7 +4,7 @@ namespace ODataOffsetProblemPOC
 {
     public class WeatherForecast
     {
-        public DateTimeOffset DateCEST { get; set; }
+        public DateTimeOffset StartDate { get; set; }
 
         public int TemperatureC { get; set; }
 

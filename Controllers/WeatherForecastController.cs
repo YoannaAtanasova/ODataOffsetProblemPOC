@@ -30,7 +30,7 @@ namespace ODataOffsetProblemPOC.Controllers
 
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
-                DateCEST = DateTimeOffset.UtcNow.AddDays(index).ToOffset(TimeSpan.FromHours(1)),
+                StartDate = DateTimeOffset.UtcNow.AddDays(index).ToOffset(TimeSpan.FromHours(1)),
                 TemperatureC = rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
