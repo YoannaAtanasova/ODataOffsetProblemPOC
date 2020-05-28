@@ -4,7 +4,7 @@ POC for problem when generating Odata nextlink skip token with date containing o
 There is a problem when using Odata Web API with dates that are not in UTC time zone.
 When we get the first page of data there is a nextlink with skip token generated, like so:
 
-"@odata.nextLink":"https://localhost:44331/odata/weatherforecast?$skiptoken=DateCEST-2020-05-28T14:11:52.2926133+01:00"
+"@odata.nextLink":"https://localhost:44331/odata/weatherforecast?$skiptoken=StartDate-2020-05-29T08:48:29.2464819+01:00"
 
 This is problematic. because of the special characters like '+', that cannot be passed as a query string parameter.
 So when we use this link we get the following exception:
@@ -13,4 +13,4 @@ The query specified in the URI is not valid. The DateTimeOffset text '2020-05-28
 
 For the generated nextlink to work the skip token must be encoded, like so:
 
-"@odata.nextLink":"https://localhost:44331/odata/weatherforecast?$skiptoken=DateCEST-2020-05-28T14:11:52.2926133%2B01:00"
+"@odata.nextLink":"https://localhost:44331/odata/weatherforecast?$skiptoken=StartDate-2020-05-29T08%3A48%3A29.2464819%2B01%3A00"
